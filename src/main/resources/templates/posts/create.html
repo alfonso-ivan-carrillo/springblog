@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create A Post</title>
+</head>
+<body>
+<form th:action="@{/posts/create}" th:method="POST">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="email" class="form-control" id="title" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea class="form-control" id="body" rows="3" name="body"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

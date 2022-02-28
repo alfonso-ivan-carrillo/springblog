@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+</head>
+<body>
+<div th:include="partials/navbar :: navbar"></div>
+<div th:include="partials/header :: header"></div>
+<div>
+    <h1>Dice Game</h1>
+    <h3>Choose a number from 1 to 6.</h3>
+</div>
+<div>
+    <ul>
+        <li><a href="/roll-dice/1" value="1">1</a></li>
+        <li><a href="/roll-dice/2" value="2">2</a></li>
+        <li><a href="/roll-dice/3" value="3">3</a></li>
+        <li><a href="/roll-dice/4" value="4">4</a></li>
+        <li><a href="/roll-dice/5" value="5">5</a></li>
+        <li><a href="/roll-dice/6" value="6">6</a></li>
+    </ul>
+</div>
+<div>
+    <span th:text="${result}"></span>
+</div>
+<div th:include="partials/footer :: footer"></div>
+</body>
+</html>
