@@ -5,15 +5,17 @@
     <title>Create A Post</title>
 </head>
 <body>
-<form th:action="@{/posts/create}" th:method="POST">
+<form th:action="@{/posts/create}" th:method="POST" th:object="${newPost}" >
     <div class="form-group">
-        <label for="title">Title</label>
-        <input type="email" class="form-control" id="title" name="title">
+        <label >Title</label>
+        <input class="form-control" type="text" id="title" name="title" th:field="*{title}">
+
     </div>
 
     <div class="form-group">
-        <label for="body">Body</label>
-        <textarea class="form-control" id="body" rows="3" name="body"></textarea>
+        <label >Body</label>
+        <textarea class="form-control" id="body" rows="3" name="body" th:field="*{body}" ></textarea>
+
     </div>
     <button type="submit">Submit</button>
 </form>

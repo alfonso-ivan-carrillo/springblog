@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <th:block th:include="partials/bootstrap"> </th:block>
+</head>
+<body>
+<div th:include="partials/navbar"></div>
+<br>
+<div class="container">
+    <div class="row justify-content-md-center">
+    <h1>User Profile</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+        <span th:text="${profileIndex.getUsername()}"></span>
+        <span th:text="${profileIndex.getEmail()}"></span>
+        <span th:text="${profileIndex.getPassword()}"></span>
+        <span th:text="${profileIndex.getId()}"></span>
+        </div>
+    </div>
+</div>
+
+
+
+<div th:include="partials/footer"></div>
+
+</body>
+</html>
