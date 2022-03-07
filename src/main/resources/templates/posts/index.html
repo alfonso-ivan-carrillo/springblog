@@ -15,6 +15,7 @@
 <div class="border border-primary container">
     <div th:each="post : ${allPosts}" class="row justify-content-center">
         <div class="col-4">
+            <p th:text="${post.getId()}">id</p>
             <p th:text="${post.getTitle()}">Title</p>
             <p th:text="${post.getBody()}">Body</p>
         </div>

@@ -46,7 +46,9 @@ public class PostController {
     public String submitCreateForm(@ModelAttribute Post newPost){
 //            (@RequestParam(name="title") String title, @RequestParam(name = "body") String body){
         newPost.setUser(userDao.getById(1L));
+        emailService.prepareAndSend(newPost, "New post created", "You had posted to our blog!");
         postsDao.save(newPost);
+
 
 //        Post newPost = new Post(title, body);
 //        newPost.setUser(userDao.getById(1L));
@@ -62,10 +64,13 @@ public class PostController {
     }
 
     @PostMapping("/posts/{id}/edit")
-    public String submitEdit(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body, @PathVariable long id){
-        Post postToEdit = postsDao.getById(id);
-        postToEdit.setTitle(title);
-        postToEdit.setBody(body);
+    public String submitEdit(@ModelAttribute Post postToEdit, @PathVariable long id){
+//    public String submitEdit(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body, @PathVariable long id){
+
+//
+//        Post postToEdit = postsDao.getById(id);
+//        postToEdit.setTitle(title);
+//        postToEdit.setBody(body);
         postsDao.save(postToEdit);
         return "redirect:/posts";
     }
